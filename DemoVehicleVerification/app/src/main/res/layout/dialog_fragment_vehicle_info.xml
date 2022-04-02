@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="@dimen/normal_space"
+    tools:context=".ui.dialogs.SearchResultDialogFragment">
+
+
+    <ImageView
+        android:id="@+id/iImg"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:fitsSystemWindows="true"
+        android:scaleType="centerCrop"
+        android:src="@color/colorPrimary"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/materialDivider"
+        app:layout_constraintTop_toBottomOf="@+id/iImg">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- num-->
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tvRegNumber"
+                style="@style/Theme.DemoDistanceCalculator.TitleText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/normal_space"
+                android:layout_marginTop="@dimen/normal_space"
+                android:text="AA11AAA"
+                android:textSize="36sp" />
+
+            <!-- engineCapacity-->
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/llcEngineCapacity"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/normal_space"
+                    android:layout_marginTop="@dimen/normal_space"
+                    android:layout_weight="0.4"
+                    android:text="@string/engine_capacity"
+                    android:textSize="@dimen/normal_text"
+                    android:textStyle="bold" />
+
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tvEngineCapacity"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/small_space"
+                    android:layout_marginTop="@dimen/normal_space"
+                    android:layout_weight="0.7"
+                    android:text="@string/unknown"
+                    android:textSize="@dimen/normal_text" />
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <!-- Fuel type-->
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/llcfuelType"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/normal_space"
+                    android:layout_marginTop="@dimen/normal_space"
+                    android:layout_weight="0.4"
+                    android:text="@string/fuel_type"
+                    android:textSize="@dimen/normal_text"
+                    android:textStyle="bold" />
+
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tvFuelType"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/small_space"
+                    android:layout_marginTop="@dimen/normal_space"
+                    android:layout_weight="0.7"
+                    android:text="@string/unknown"
+                    android:textSize="@dimen/normal_text" />
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <!-- colour-->
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/llccolour"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/normal_space"
+                    android:layout_marginTop="@dimen/normal_space"
+                    android:layout_weight="0.4"
+                    android:text="@string/colour"
+                    android:textSize="@dimen/normal_text"
+                    android:textStyle="bold" />
+
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tvColour"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/small_space"
+                    android:layout_marginTop="@dimen/normal_space"
+                    android:layout_weight="0.7"
+                    android:text="@string/unknown"
+                    android:textSize="@dimen/normal_text" />
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <!-- monthOfFirstRegistration-->
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/llcmonthOfFirstRegistration"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/normal_space"
+                    android:layout_marginTop="@dimen/normal_space"
+                    android:layout_weight="0.4"
+                    android:text="@string/month_of_first_registration"
+                    android:textSize="@dimen/normal_text"
+                    android:textStyle="bold" />
+
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tvMonthOfFirstRegistration"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/small_space"
+                    android:layout_marginTop="@dimen/normal_space"
+                    android:layout_weight="0.7"
+                    android:text="@string/unknown"
+                    android:textSize="@dimen/normal_text" />
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+    </ScrollView>
+
+
+    <com.google.android.material.divider.MaterialDivider
+        android:id="@+id/materialDivider"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/normal_space"
+        app:layout_constraintBottom_toTopOf="@+id/tvInfo" />
+
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tvInfo"
+        style="@style/Theme.DemoDistanceCalculator.TitleText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/normal_space"
+        android:layout_marginBottom="@dimen/normal_space"
+        android:gravity="center"
+        android:text="@string/please_confirm_if_this_is_your_vehicle"
+        android:textSize="@dimen/large_text"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayoutCompat"
+        tools:layout_editor_absoluteX="32dp" />
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/linearLayoutCompat"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/bNo"
+            style="@style/Widget.Material3.Button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginEnd="@dimen/normal_space"
+            android:layout_weight="1"
+            android:paddingHorizontal="30dp"
+            android:paddingVertical="10dp"
+            android:text="@string/disprove"
+            android:textAllCaps="false"
+            android:textSize="@dimen/normal_text" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/bYes"
+            style="@style/Widget.Material3.Button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:paddingHorizontal="30dp"
+            android:paddingVertical="10dp"
+            android:text="@string/approve"
+            android:textAllCaps="false"
+            android:textSize="@dimen/normal_text" />
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
