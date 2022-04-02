@@ -6,7 +6,6 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.core.graphics.drawable.toBitmap
 import androidx.fragment.app.DialogFragment
 import com.bumptech.glide.Glide
 import com.rohan.demovehicleverification.R
@@ -15,7 +14,7 @@ import com.rohan.demovehicleverification.data.network.VehicleResponse
 import com.rohan.demovehicleverification.databinding.DialogFragmentVehicleInfoBinding
 
 
-class SearchResultDialogFragment : DialogFragment() {
+class SearchResultDialogFragment : androidx.fragment.app.DialogFragment() {
 
     companion object {
         const val TAG = "SearchResultDialogFragment"
@@ -29,6 +28,7 @@ class SearchResultDialogFragment : DialogFragment() {
     private var iCommitDialogInfo: ICommitDialogInfo? = null
 
     private var approved = false
+    private var isCleared = false
 
     fun initDialog(
         vehicle: VehicleResponse,
@@ -55,6 +55,7 @@ class SearchResultDialogFragment : DialogFragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+
         val unknownText = getText(R.string.unknown)
 
         binding.tvRegNumber.text = vehicle?.registrationNumber ?: unknownText
@@ -63,6 +64,8 @@ class SearchResultDialogFragment : DialogFragment() {
         binding.tvMonthOfFirstRegistration.text = vehicle?.monthOfFirstRegistration ?: unknownText
 
         Glide.with(binding.root).load(image).into(binding.iImg)
+
+
 
         binding.bNo.setOnClickListener {
             dismiss()
@@ -81,36 +84,41 @@ class SearchResultDialogFragment : DialogFragment() {
         }
     }
 
+    fun clearDataAndDismiss() {
+        vehicle = null
+        iCommitDialogInfo = null
+        image = null
+        isCleared = true
+        dismiss()
+    }
+
     override fun onDismiss(dialog: DialogInterface) {
         super.onDismiss(dialog)
+        if (!isCleared) {
+            val vi = VehicleInfo(
+                img = image,
+                createdDate = startTime,
+                approved = approved,
+                found = true,
+                registrationNumber = vehicle?.registrationNumber ?: "",
+                co2Emissions = vehicle?.co2Emissions ?: 0,
+                engineCapacity = vehicle?.engineCapacity ?: 0,
+                markedForExport = vehicle?.markedForExport ?: false,
+                fuelType = vehicle?.fuelType ?: "",
+                motStatus = vehicle?.motStatus ?: "",
+                colour = vehicle?.colour ?: "",
+                make = vehicle?.make ?: "",
+                typeApproval = vehicle?.typeApproval ?: "",
+                yearOfManufacture = vehicle?.yearOfManufacture ?: 0,
+                taxDueDate = vehicle?.taxDueDate ?: "",
+                taxStatus = vehicle?.taxStatus ?: "",
+                dateOfLastV5CIssued = vehicle?.dateOfLastV5CIssued ?: "",
+                motExpiryDate = vehicle?.motExpiryDate ?: "",
+                wheelplan = vehicle?.wheelplan ?: "",
+                monthOfFirstRegistration = vehicle?.monthOfFirstRegistration ?: "",
+            )
 
-        binding.iImg.invalidate()
-        val drawable = binding.iImg.drawable
-        val bitmap = drawable.toBitmap()
-
-        val vi = VehicleInfo(
-            img = bitmap,
-            createdDate = startTime,
-            approved = approved,
-            found = true,
-            registrationNumber = vehicle?.registrationNumber ?: "",
-            co2Emissions = vehicle?.co2Emissions ?: 0,
-            engineCapacity = vehicle?.engineCapacity ?: 0,
-            markedForExport = vehicle?.markedForExport ?: false,
-            fuelType = vehicle?.fuelType ?: "",
-            motStatus = vehicle?.motStatus ?: "",
-            colour = vehicle?.colour ?: "",
-            make = vehicle?.make ?: "",
-            typeApproval = vehicle?.typeApproval ?: "",
-            yearOfManufacture = vehicle?.yearOfManufacture ?: 0,
-            taxDueDate = vehicle?.taxDueDate ?: "",
-            taxStatus = vehicle?.taxStatus ?: "",
-            dateOfLastV5CIssued = vehicle?.dateOfLastV5CIssued ?: "",
-            motExpiryDate = vehicle?.motExpiryDate ?: "",
-            wheelplan = vehicle?.wheelplan ?: "",
-            monthOfFirstRegistration = vehicle?.monthOfFirstRegistration ?: "",
-        )
-
-        iCommitDialogInfo?.dialogClosedWithStatus(approved, vi)
+            iCommitDialogInfo?.dialogClosedWithStatus(approved, vi)
+        }
     }
 }

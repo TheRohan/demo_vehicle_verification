@@ -1,49 +1,58 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_margin="@dimen/small_space"
-    android:id="@+id/holder"
-    app:cardCornerRadius="20dp"
-    app:cardElevation="10dp">
+    android:layout_height="wrap_content">
 
-    <LinearLayout
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/holder"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:padding="@dimen/normal_space">
+        android:layout_margin="@dimen/small_space"
+        app:cardCornerRadius="20dp"
+        app:cardElevation="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="16dp">
 
-        <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/tvRegNumber"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:ellipsize="end"
-            android:lines="1"
-            android:textColor="@color/purple_500"
-            android:text="@string/registrationNumber"
-            android:textSize="@dimen/normal_text" />
+            android:orientation="vertical"
+            android:padding="@dimen/normal_space">
 
-        <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/tvSatus"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/small_space"
-            android:ellipsize="end"
-            android:lines="1"
-            android:text="@string/status"
-            android:textSize="@dimen/normal_text" />
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tvRegNumber"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:lines="1"
+                android:text="@string/registrationNumber"
+                android:textColor="@color/purple_500"
+                android:textSize="@dimen/normal_text" />
 
-        <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/tvDate"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/small_space"
-            android:ellipsize="end"
-            android:lines="1"
-            android:text="@string/verification_date"
-            android:textSize="@dimen/normal_text" />
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tvSatus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/small_space"
+                android:ellipsize="end"
+                android:lines="1"
+                android:text="@string/status"
+                android:textSize="@dimen/normal_text" />
 
-    </LinearLayout>
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tvDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/small_space"
+                android:ellipsize="end"
+                android:lines="1"
+                android:text="@string/verification_date"
+                android:textSize="@dimen/normal_text" />
 
-</com.google.android.material.card.MaterialCardView>
+        </LinearLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+</androidx.constraintlayout.widget.ConstraintLayout>

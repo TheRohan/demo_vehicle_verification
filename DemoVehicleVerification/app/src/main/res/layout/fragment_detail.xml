@@ -170,7 +170,7 @@
 
 
                 <com.google.android.material.textview.MaterialTextView
-                    android:id="@+id/tvmotStatus"
+                    android:id="@+id/tvMotStatus"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="@dimen/small_space"
@@ -373,7 +373,7 @@
 
 
                 <com.google.android.material.textview.MaterialTextView
-                    android:id="@+id/tvdateOfLastV5CIssued"
+                    android:id="@+id/tvDateOfLastV5CIssued"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="@dimen/small_space"
@@ -431,7 +431,7 @@
 
 
                 <com.google.android.material.textview.MaterialTextView
-                    android:id="@+id/tvwheelplan"
+                    android:id="@+id/tvWheelplan"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="@dimen/small_space"

@@ -36,6 +36,7 @@
     <string name="approve">Approve</string>
     <string name="disprove">Disprove</string>
     <string name="reg_num_err">Registration number is incorrect </string>
+    <string name="internet_err">No internet connection </string>
     <string name="default_err">Something went wrong</string>
     <string name="no_vehicle_err">Data not found, try another registration number</string>
 
@@ -48,7 +49,7 @@
     <string name="disproved">Disproved</string>
 
     <string-array name="filter_options">
-        <item>All</item>
+        <item>Date</item>
         <item>Name</item>
         <item>Approved</item>
         <item>Disproved</item>

@@ -35,7 +35,9 @@ class SearchViewModel @Inject constructor(
                 _vehicleInfo.emit(
                     Resource.Error(
                         result.message(),
-                        VehicleResponse(registrationNumber = regNum.registrationNumber)
+                        VehicleResponse(
+                            registrationNumber = regNum.registrationNumber,
+                        )
                     )
                 )
             }

@@ -1,11 +1,11 @@
 package com.rohan.demovehicleverification.ui.fragments
 
+import android.content.res.Configuration
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.inputmethod.EditorInfo
-import android.widget.TextView.OnEditorActionListener
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
@@ -18,7 +18,9 @@ import com.rohan.demovehicleverification.data.network.RegistrationNumberModel
 import com.rohan.demovehicleverification.data.network.VehicleResponse
 import com.rohan.demovehicleverification.databinding.FragmentSearchBinding
 import com.rohan.demovehicleverification.other.Resource
+import com.rohan.demovehicleverification.other.Utility
 import com.rohan.demovehicleverification.other.Utility.getRandomImagePath
+import com.rohan.demovehicleverification.other.hideKeyboard
 import com.rohan.demovehicleverification.ui.dialogs.ICommitDialogInfo
 import com.rohan.demovehicleverification.ui.dialogs.SearchResultDialogFragment
 import com.rohan.demovehicleverification.ui.viewmodels.SearchViewModel
@@ -32,6 +34,8 @@ class SearchFragment : Fragment(R.layout.fragment_search), ICommitDialogInfo {
     lateinit var binding: FragmentSearchBinding
 
     private val viewModel: SearchViewModel by viewModels()
+
+    private var dialog: SearchResultDialogFragment? = null
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -58,7 +62,7 @@ class SearchFragment : Fragment(R.layout.fragment_search), ICommitDialogInfo {
 
                         Snackbar.make(
                             requireActivity().findViewById(R.id.rootView),
-                             if(it.message?.isBlank() == true) getString(R.string.no_vehicle_err) else it.message ?: getString(R.string.default_err),
+                            getString(R.string.no_vehicle_err),
                             Snackbar.LENGTH_LONG
                         ).show()
 
@@ -66,6 +70,7 @@ class SearchFragment : Fragment(R.layout.fragment_search), ICommitDialogInfo {
                             viewModel.createVehicleInfo(
                                 VehicleInfo(
                                     registrationNumber = it,
+                                    createdDate = System.currentTimeMillis(),
                                 )
                             )
                         }
@@ -91,7 +96,7 @@ class SearchFragment : Fragment(R.layout.fragment_search), ICommitDialogInfo {
 
         binding.etRegNum.setOnEditorActionListener { v, actionId, event ->
             var handled = false
-            if (actionId == EditorInfo.IME_ACTION_SEARCH) {
+            if (actionId == EditorInfo.IME_ACTION_SEARCH || actionId == EditorInfo.IME_NULL) {
                 searchTapped()
                 handled = true
             }
@@ -105,15 +110,27 @@ class SearchFragment : Fragment(R.layout.fragment_search), ICommitDialogInfo {
     }
 
     private fun openDialog(vehicle: VehicleResponse) {
-        val dialog = SearchResultDialogFragment().apply {
-            initDialog(
-                vehicle,
-                System.currentTimeMillis(),
-                getRandomImagePath(),
-                this@SearchFragment
-            )
+        activity?.let {
+            dialog = SearchResultDialogFragment().apply {
+                initDialog(
+                    vehicle,
+                    System.currentTimeMillis(),
+                    getRandomImagePath(),
+                    this@SearchFragment
+                )
+            }
+            dialog?.show(it.supportFragmentManager, SearchResultDialogFragment.TAG)
         }
-        activity?.let { dialog.show(it.supportFragmentManager, SearchResultDialogFragment.TAG) }
+    }
+
+    override fun onConfigurationChanged(newConfig: Configuration) {
+        // Checks the orientation of the screen
+        if (newConfig.orientation == Configuration.ORIENTATION_LANDSCAPE) {
+            dialog?.clearDataAndDismiss()
+        } else if (newConfig.orientation == Configuration.ORIENTATION_PORTRAIT) {
+            dialog?.clearDataAndDismiss()
+        }
+        super.onConfigurationChanged(newConfig)
     }
 
     override fun dialogClosedWithStatus(status: Boolean, vi: VehicleInfo) {
@@ -131,7 +148,7 @@ class SearchFragment : Fragment(R.layout.fragment_search), ICommitDialogInfo {
         }
     }
 
-    private fun searchTapped(){
+    private fun searchTapped() {
         if (binding.bLoad.alpha != 1f) {
             return
         }
@@ -139,9 +156,17 @@ class SearchFragment : Fragment(R.layout.fragment_search), ICommitDialogInfo {
             binding.tiRegNum.error = getText(R.string.reg_num_err)
             return
         }
+        if (!Utility.checkNetworkEnableAndShowDialog(requireContext())) {
+            binding.tiRegNum.error = getText(R.string.internet_err)
+            return
+        }
+
+        hideKeyboard()
+
         binding.tiRegNum.error = null
         val num = binding.etRegNum.text.toString()
 
         viewModel.checkNewVehicle(RegistrationNumberModel(num))
     }
+
 }

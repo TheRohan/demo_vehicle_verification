@@ -22,6 +22,7 @@ class VehicleHistoryAdapter(
 ) : RecyclerView.Adapter<VehicleHistoryAdapter.VehicleInfoViewHolder>() {
 
     val diffCallback = object : DiffUtil.ItemCallback<VehicleInfo>() {
+
         override fun areItemsTheSame(oldItem: VehicleInfo, newItem: VehicleInfo): Boolean {
             return oldItem.id == newItem.id
         }
@@ -65,7 +66,10 @@ class VehicleHistoryAdapter(
             if (!item.found) {
                 statusText = c.getString(R.string.not_found)
                 statusColor = c.resources.getString(R.color.wrong)
+                binding.holder.alpha = 0.5f
             } else {
+                binding.holder.alpha = 1f
+
                 if (item.approved) {
                     statusText = c.getString(R.string.approved)
                     statusColor = c.resources.getString(R.color.correct)
@@ -76,11 +80,16 @@ class VehicleHistoryAdapter(
             }
 
 
-
             binding.tvSatus.text = HtmlCompat.fromHtml(
-                "<b>${c.getString(R.string.status)}:</b>\t\t<font color='#$statusColor'>${statusText} </font>",
+                "<b>${c.getString(R.string.status)}:</b>\t\t <font color='${
+                    statusColor.removeRange(
+                        1,
+                        3
+                    )
+                }'>${statusText} </font>",
                 HtmlCompat.FROM_HTML_MODE_LEGACY
             )
+
 
 
             //date

@@ -7,71 +7,78 @@
     android:padding="@dimen/normal_space"
     tools:context=".ui.fragments.SearchFragment">
 
-
-    <androidx.appcompat.widget.LinearLayoutCompat
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="32dp">
+        android:layout_height="match_parent">
 
-        <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/tvTitle"
-            style="@style/Theme.DemoDistanceCalculator.TitleText"
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_gravity="center"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:width="300dp"
-            android:gravity="center"
-            android:text="@string/please_write_down_your_registration_number"
-            android:textSize="@dimen/extra_large_text" />
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:layout_editor_absoluteX="32dp">
 
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/tiRegNum"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:layout_width="400dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="@dimen/normal_space">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/etRegNum"
-                style="@style/Widget.Material3.TextInputLayout.OutlinedBox.Dense"
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tvTitle"
+                style="@style/Theme.DemoDistanceCalculator.TitleText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890"
-                android:ems="16"
+                android:layout_gravity="center"
+                android:width="300dp"
                 android:gravity="center"
-                android:hint="@string/registrationNumber"
-                android:imeOptions="actionSearch"
-                android:inputType="textCapCharacters"
-                android:maxLength="12"
-                android:text=""
-                android:textAllCaps="true"
-                android:textSize="@dimen/normal_space"
-                tools:ignore="SpUsage" />
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/bLoad"
-            style="@style/Widget.Material3.Button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_margin="40dp"
-            android:paddingHorizontal="30dp"
-            android:paddingVertical="10dp"
-            android:text="@string/get_information"
-            android:textAllCaps="false"
-            android:textSize="@dimen/normal_text"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+                android:text="@string/please_write_down_your_registration_number"
+                android:textSize="@dimen/extra_large_text" />
 
 
-    </androidx.appcompat.widget.LinearLayoutCompat>
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tiRegNum"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="400dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/normal_space">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etRegNum"
+                    style="@style/Widget.Material3.TextInputLayout.OutlinedBox.Dense"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890"
+                    android:ems="16"
+                    android:gravity="center"
+                    android:hint="@string/registrationNumber"
+                    android:imeOptions="actionSearch"
+                    android:inputType="text"
+                    android:maxLength="12"
+                    android:text=""
+                    android:textAllCaps="true"
+                    android:textSize="@dimen/normal_space"
+                    tools:ignore="SpUsage" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/bLoad"
+                style="@style/Widget.Material3.Button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="40dp"
+                android:paddingHorizontal="30dp"
+                android:paddingVertical="10dp"
+                android:text="@string/get_information"
+                android:textAllCaps="false"
+                android:textSize="@dimen/normal_text"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+    </ScrollView>
+
 
     <ProgressBar
         android:id="@+id/progressBar"

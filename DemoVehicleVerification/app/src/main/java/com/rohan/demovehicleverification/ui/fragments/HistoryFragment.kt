@@ -10,6 +10,7 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView.AdapterDataObserver
 import com.rohan.demovehicleverification.R
 import com.rohan.demovehicleverification.adapters.ISelectItem
 import com.rohan.demovehicleverification.adapters.VehicleHistoryAdapter
@@ -18,6 +19,7 @@ import com.rohan.demovehicleverification.other.SortType
 import com.rohan.demovehicleverification.ui.viewmodels.HistoryViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.collect
+
 
 @AndroidEntryPoint
 class HistoryFragment : Fragment(R.layout.fragment_history), ISelectItem {
@@ -86,6 +88,7 @@ class HistoryFragment : Fragment(R.layout.fragment_history), ISelectItem {
         vehicleHistoryAdapter = VehicleHistoryAdapter(context, this@HistoryFragment)
         adapter = vehicleHistoryAdapter
         layoutManager = LinearLayoutManager(context)
+
     }
 
     override fun itemSelect(id: Int) {
@@ -94,5 +97,4 @@ class HistoryFragment : Fragment(R.layout.fragment_history), ISelectItem {
             findNavController().navigate(action)
         }
     }
-
 }

@@ -7,9 +7,10 @@
         <entry key="app/src/main/res/layout/dialog_fragment_vehicle_info.xml" value="0.1656951904296875" />
         <entry key="app/src/main/res/layout/fragment_detail.xml" value="0.17687908496732027" />
         <entry key="app/src/main/res/layout/fragment_hello.xml" value="0.2371643066406251" />
-        <entry key="app/src/main/res/layout/fragment_history.xml" value="0.22552083333333334" />
+        <entry key="app/src/main/res/layout/fragment_history.xml" value="0.20973114013671873" />
         <entry key="app/src/main/res/layout/fragment_search.xml" value="0.227093505859375" />
         <entry key="app/src/main/res/layout/history_item_element.xml" value="0.17687908496732027" />
+        <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.2055" />
       </map>
     </option>
   </component>

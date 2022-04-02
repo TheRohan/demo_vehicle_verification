@@ -11,7 +11,7 @@ import androidx.room.PrimaryKey
 @Entity(tableName = "vehicle_info_table")
 data class VehicleInfo(
 
-    var img: Bitmap? = null,
+    var img: String? = null,
 
     var createdDate: Long = 0L,
 
