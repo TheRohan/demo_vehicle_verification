@@ -78,7 +78,7 @@ class VehicleHistoryAdapter(
 
 
             binding.tvSatus.text = HtmlCompat.fromHtml(
-                "<b>${c.getString(R.string.registrationNumber)}:</b>\t\t<font color='#$statusColor'>${statusText} </font>",
+                "<b>${c.getString(R.string.status)}:</b>\t\t<font color='#$statusColor'>${statusText} </font>",
                 HtmlCompat.FROM_HTML_MODE_LEGACY
             )
 
@@ -88,12 +88,14 @@ class VehicleHistoryAdapter(
 
             binding.tvDate.text =
                 HtmlCompat.fromHtml(
-                    "<b>${c.getString(R.string.verification_date)}</b>\t\t$dateString",
+                    "<b>${c.getString(R.string.verification_date)}:</b>\t\t$dateString",
                     HtmlCompat.FROM_HTML_MODE_LEGACY
                 )
 
             binding.holder.setOnClickListener {
-                iSelectItem.itemSelect(item.id ?: -1)
+                if (item.found) {
+                    iSelectItem.itemSelect(item.id ?: -1)
+                }
             }
         }
     }

@@ -11,6 +11,8 @@ import java.util.*
 
 object Utility {
 
+    fun getRandomImagePath() = "https://source.unsplash.com/user/c_v_r/400x300"
+
     fun isNetworkAvailable(context: Context?): Boolean {
         if (context == null) return false
         val connectivityManager = context.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager

@@ -1,5 +1,6 @@
 package com.rohan.demovehicleverification.di
 
+import com.google.gson.GsonBuilder
 import com.rohan.demovehicleverification.data.network.VehicleNetworkServices
 import com.rohan.demovehicleverification.other.Constants.API_KEY
 import com.rohan.demovehicleverification.other.Constants.ENDPOINT
@@ -54,7 +55,7 @@ class ApiModule {
     fun provideRetrofit(client: OkHttpClient): Retrofit {
         return Retrofit.Builder()
             .baseUrl(ENDPOINT)
-            .addConverterFactory(GsonConverterFactory.create())
+            .addConverterFactory(GsonConverterFactory.create(GsonBuilder().create()))
             .client(client)
             .build()
     }

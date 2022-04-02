@@ -184,6 +184,8 @@
 
     <androidx.appcompat.widget.LinearLayoutCompat
         android:id="@+id/linearLayoutCompat"
+        android:paddingHorizontal="@dimen/normal_space"
+        android:paddingBottom="@dimen/normal_space"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"

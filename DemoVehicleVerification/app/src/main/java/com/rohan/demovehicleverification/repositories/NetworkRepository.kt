@@ -12,7 +12,7 @@ class NetworkRepository @Inject constructor(
     private val vehicleNetworkServices: VehicleNetworkServices
 ) {
 
-    suspend fun fetchLocationInfo(regNumber: RegistrationNumberModel): Response<VehicleResponse> =
+    suspend fun fetchVehicleInfo(regNumber: RegistrationNumberModel): Response<VehicleResponse> =
         withContext(
             Dispatchers.IO
         ) {

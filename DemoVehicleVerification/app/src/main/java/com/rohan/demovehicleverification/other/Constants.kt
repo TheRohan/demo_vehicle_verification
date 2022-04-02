@@ -2,7 +2,7 @@ package com.rohan.demovehicleverification.other
 
 object Constants {
 
-    const val ENDPOINT = "https://nominatim.openstreetmap.org/"
+    const val ENDPOINT = "https://driver-vehicle-licensing.api.gov.uk/vehicle-enquiry/v1/"
     const val API_KEY = "mG1zaRgSH21lGk5mHwqgV6Y4oGkm8UpX5VNbfHoN"
 
 
