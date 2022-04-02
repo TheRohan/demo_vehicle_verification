@@ -9,12 +9,17 @@
         android:id="@+id/detailFragment"
         android:name="com.rohan.demovehicleverification.ui.fragments.DetailFragment"
         android:label="fragment_detail"
-        tools:layout="@layout/fragment_detail" />
+        tools:layout="@layout/fragment_detail">
+        <argument
+            android:name="distanceInfoId"
+            android:defaultValue="-1"
+            app:argType="integer" />
+    </fragment>
     <fragment
         android:id="@+id/helloFragment"
         android:name="com.rohan.demovehicleverification.ui.fragments.HelloFragment"
         android:label="fragment_hello"
-        tools:layout="@layout/fragment_hello" >
+        tools:layout="@layout/fragment_hello">
         <action
             android:id="@+id/action_helloFragment_to_historyFragment"
             app:destination="@id/historyFragment"
@@ -30,7 +35,7 @@
         android:id="@+id/historyFragment"
         android:name="com.rohan.demovehicleverification.ui.fragments.HistoryFragment"
         android:label="fragment_history"
-        tools:layout="@layout/fragment_history" >
+        tools:layout="@layout/fragment_history">
         <action
             android:id="@+id/action_historyFragment_to_searchFragment"
             app:destination="@id/searchFragment"

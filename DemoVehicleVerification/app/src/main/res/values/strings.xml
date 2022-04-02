@@ -36,11 +36,15 @@
     <string name="approve">Approve</string>
     <string name="disprove">Disprove</string>
 
+    <string name="not_found">Not found</string>
+    <string name="approved">Approved</string>
+    <string name="disproved">Disproved</string>
+
     <string-array name="filter_options">
         <item>All</item>
         <item>Name</item>
         <item>Approved</item>
-        <item>Correct</item>
-        <item>Incorrect</item>
+        <item>Disproved</item>
+        <item>Not found</item>
     </string-array>
 </resources>

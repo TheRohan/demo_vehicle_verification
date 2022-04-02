@@ -1,9 +1,13 @@
 package com.rohan.demovehicleverification.other
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.net.ConnectivityManager
 import android.net.NetworkCapabilities
 import android.os.Build
+import java.lang.Exception
+import java.text.SimpleDateFormat
+import java.util.*
 
 object Utility {
 
@@ -32,5 +36,15 @@ object Utility {
             }
         }
         return false
+    }
+
+    @SuppressLint("SimpleDateFormat")
+    fun millsToText(createdDate: Long): String {
+        return try {
+            val formatter = SimpleDateFormat("dd/MM/yyyy hh:mm:ss")
+            formatter.format(Date(createdDate))
+        } catch (e: Exception) {
+            ""
+        }
     }
 }
