@@ -39,11 +39,8 @@
     <string name="internet_err">No internet connection </string>
     <string name="default_err">Something went wrong</string>
     <string name="no_vehicle_err">Data not found, try another registration number</string>
-
     <string name="success">Success</string>
     <string name="success_dialog_body">Vehicle was successfully approved!</string>
-
-
     <string name="not_found">Not found</string>
     <string name="approved">Approved</string>
     <string name="disproved">Disproved</string>

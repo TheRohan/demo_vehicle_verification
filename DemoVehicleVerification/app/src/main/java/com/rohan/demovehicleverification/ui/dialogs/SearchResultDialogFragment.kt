@@ -61,6 +61,7 @@ class SearchResultDialogFragment : androidx.fragment.app.DialogFragment() {
         binding.tvRegNumber.text = vehicle?.registrationNumber ?: unknownText
         binding.tvEngineCapacity.text = vehicle?.engineCapacity?.toString() ?: unknownText
         binding.tvColour.text = vehicle?.colour ?: unknownText
+        binding.tvFuelType.text = vehicle?.fuelType ?: unknownText
         binding.tvMonthOfFirstRegistration.text = vehicle?.monthOfFirstRegistration ?: unknownText
 
         Glide.with(binding.root).load(image).into(binding.iImg)

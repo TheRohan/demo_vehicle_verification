@@ -12,9 +12,9 @@
         android:layout_height="match_parent">
 
         <androidx.appcompat.widget.LinearLayoutCompat
-            android:layout_gravity="center"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
             android:orientation="vertical"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -50,7 +50,7 @@
                     android:gravity="center"
                     android:hint="@string/registrationNumber"
                     android:imeOptions="actionSearch"
-                    android:inputType="text"
+                    android:inputType="textCapCharacters"
                     android:maxLength="12"
                     android:text=""
                     android:textAllCaps="true"

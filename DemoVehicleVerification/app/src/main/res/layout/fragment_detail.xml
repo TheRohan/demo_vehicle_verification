@@ -35,6 +35,11 @@
 
 
             <!-- co2Emissions-->
+            <com.google.android.material.divider.MaterialDivider
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="@dimen/small_space" />
+
             <androidx.appcompat.widget.LinearLayoutCompat
                 android:id="@+id/llcCo2Emissions"
                 android:layout_width="match_parent"
@@ -45,7 +50,6 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="@dimen/normal_space"
-                    android:layout_marginTop="@dimen/normal_space"
                     android:layout_weight="0.4"
                     android:text="@string/co2_emissions"
                     android:textSize="@dimen/normal_text"
@@ -56,8 +60,8 @@
                     android:id="@+id/tvCo2Emissions"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
                     android:layout_marginHorizontal="@dimen/small_space"
-                    android:layout_marginTop="@dimen/normal_space"
                     android:layout_weight="0.7"
                     android:text="@string/unknown"
                     android:textSize="@dimen/normal_text" />
@@ -65,6 +69,11 @@
 
 
             <!-- engineCapacity-->
+            <com.google.android.material.divider.MaterialDivider
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="@dimen/small_space" />
+
             <androidx.appcompat.widget.LinearLayoutCompat
                 android:id="@+id/llcEngineCapacity"
                 android:layout_width="match_parent"
@@ -75,7 +84,6 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="@dimen/normal_space"
-                    android:layout_marginTop="@dimen/normal_space"
                     android:layout_weight="0.4"
                     android:text="@string/engine_capacity"
                     android:textSize="@dimen/normal_text"
@@ -86,14 +94,19 @@
                     android:id="@+id/tvEngineCapacity"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
                     android:layout_marginHorizontal="@dimen/small_space"
-                    android:layout_marginTop="@dimen/normal_space"
                     android:layout_weight="0.7"
                     android:text="@string/unknown"
                     android:textSize="@dimen/normal_text" />
             </androidx.appcompat.widget.LinearLayoutCompat>
 
             <!-- markedForExport-->
+            <com.google.android.material.divider.MaterialDivider
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="@dimen/small_space" />
+
             <androidx.appcompat.widget.LinearLayoutCompat
                 android:id="@+id/llcmarkedForExport"
                 android:layout_width="match_parent"
@@ -104,7 +117,6 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="@dimen/normal_space"
-                    android:layout_marginTop="@dimen/normal_space"
                     android:layout_weight="0.4"
                     android:text="@string/marked_for_export"
                     android:textSize="@dimen/normal_text"
@@ -115,14 +127,19 @@
                     android:id="@+id/tvMarkedForExport"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
                     android:layout_marginHorizontal="@dimen/small_space"
-                    android:layout_marginTop="@dimen/normal_space"
                     android:layout_weight="0.7"
                     android:text="@string/unknown"
                     android:textSize="@dimen/normal_text" />
             </androidx.appcompat.widget.LinearLayoutCompat>
 
             <!-- Fuel type-->
+            <com.google.android.material.divider.MaterialDivider
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="@dimen/small_space" />
+
             <androidx.appcompat.widget.LinearLayoutCompat
                 android:id="@+id/llcfuelType"
                 android:layout_width="match_parent"
@@ -133,7 +150,6 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="@dimen/normal_space"
-                    android:layout_marginTop="@dimen/normal_space"
                     android:layout_weight="0.4"
                     android:text="@string/fuel_type"
                     android:textSize="@dimen/normal_text"
@@ -144,14 +160,19 @@
                     android:id="@+id/tvFuelType"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
                     android:layout_marginHorizontal="@dimen/small_space"
-                    android:layout_marginTop="@dimen/normal_space"
                     android:layout_weight="0.7"
                     android:text="@string/unknown"
                     android:textSize="@dimen/normal_text" />
             </androidx.appcompat.widget.LinearLayoutCompat>
 
             <!-- motStatus-->
+            <com.google.android.material.divider.MaterialDivider
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="@dimen/small_space" />
+
             <androidx.appcompat.widget.LinearLayoutCompat
                 android:id="@+id/motStatus"
                 android:layout_width="match_parent"
@@ -162,7 +183,6 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="@dimen/normal_space"
-                    android:layout_marginTop="@dimen/normal_space"
                     android:layout_weight="0.4"
                     android:text="@string/mot_status"
                     android:textSize="@dimen/normal_text"
@@ -173,14 +193,19 @@
                     android:id="@+id/tvMotStatus"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
                     android:layout_marginHorizontal="@dimen/small_space"
-                    android:layout_marginTop="@dimen/normal_space"
                     android:layout_weight="0.7"
                     android:text="@string/unknown"
                     android:textSize="@dimen/normal_text" />
             </androidx.appcompat.widget.LinearLayoutCompat>
 
             <!-- colour-->
+            <com.google.android.material.divider.MaterialDivider
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="@dimen/small_space" />
+
             <androidx.appcompat.widget.LinearLayoutCompat
                 android:id="@+id/llccolour"
                 android:layout_width="match_parent"
@@ -191,7 +216,6 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="@dimen/normal_space"
-                    android:layout_marginTop="@dimen/normal_space"
                     android:layout_weight="0.4"
                     android:text="@string/colour"
                     android:textSize="@dimen/normal_text"
@@ -202,14 +226,19 @@
                     android:id="@+id/tvColour"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
                     android:layout_marginHorizontal="@dimen/small_space"
-                    android:layout_marginTop="@dimen/normal_space"
                     android:layout_weight="0.7"
                     android:text="@string/unknown"
                     android:textSize="@dimen/normal_text" />
             </androidx.appcompat.widget.LinearLayoutCompat>
 
             <!-- make-->
+            <com.google.android.material.divider.MaterialDivider
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="@dimen/small_space" />
+
             <androidx.appcompat.widget.LinearLayoutCompat
                 android:id="@+id/llcmake"
                 android:layout_width="match_parent"
@@ -220,7 +249,6 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="@dimen/normal_space"
-                    android:layout_marginTop="@dimen/normal_space"
                     android:layout_weight="0.4"
                     android:text="@string/make"
                     android:textSize="@dimen/normal_text"
@@ -231,14 +259,19 @@
                     android:id="@+id/tvMake"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
                     android:layout_marginHorizontal="@dimen/small_space"
-                    android:layout_marginTop="@dimen/normal_space"
                     android:layout_weight="0.7"
                     android:text="@string/unknown"
                     android:textSize="@dimen/normal_text" />
             </androidx.appcompat.widget.LinearLayoutCompat>
 
             <!-- typeApproval-->
+            <com.google.android.material.divider.MaterialDivider
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="@dimen/small_space" />
+
             <androidx.appcompat.widget.LinearLayoutCompat
                 android:id="@+id/llctypeApproval"
                 android:layout_width="match_parent"
@@ -249,7 +282,6 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="@dimen/normal_space"
-                    android:layout_marginTop="@dimen/normal_space"
                     android:layout_weight="0.4"
                     android:text="@string/type_approval"
                     android:textSize="@dimen/normal_text"
@@ -260,14 +292,19 @@
                     android:id="@+id/tvTypeApproval"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
                     android:layout_marginHorizontal="@dimen/small_space"
-                    android:layout_marginTop="@dimen/normal_space"
                     android:layout_weight="0.7"
                     android:text="@string/unknown"
                     android:textSize="@dimen/normal_text" />
             </androidx.appcompat.widget.LinearLayoutCompat>
 
             <!-- yearOfManufacture-->
+            <com.google.android.material.divider.MaterialDivider
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="@dimen/small_space" />
+
             <androidx.appcompat.widget.LinearLayoutCompat
                 android:id="@+id/llcyearOfManufacture"
                 android:layout_width="match_parent"
@@ -278,7 +315,6 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="@dimen/normal_space"
-                    android:layout_marginTop="@dimen/normal_space"
                     android:layout_weight="0.4"
                     android:text="@string/year_of_manufacture"
                     android:textSize="@dimen/normal_text"
@@ -289,14 +325,19 @@
                     android:id="@+id/tvYearOfManufacture"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
                     android:layout_marginHorizontal="@dimen/small_space"
-                    android:layout_marginTop="@dimen/normal_space"
                     android:layout_weight="0.7"
                     android:text="@string/unknown"
                     android:textSize="@dimen/normal_text" />
             </androidx.appcompat.widget.LinearLayoutCompat>
 
             <!-- taxDueDate-->
+            <com.google.android.material.divider.MaterialDivider
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="@dimen/small_space" />
+
             <androidx.appcompat.widget.LinearLayoutCompat
                 android:id="@+id/llcTaxDueDate"
                 android:layout_width="match_parent"
@@ -307,7 +348,6 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="@dimen/normal_space"
-                    android:layout_marginTop="@dimen/normal_space"
                     android:layout_weight="0.4"
                     android:text="@string/tax_due_date"
                     android:textSize="@dimen/normal_text"
@@ -318,14 +358,19 @@
                     android:id="@+id/tvTaxDueDate"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
                     android:layout_marginHorizontal="@dimen/small_space"
-                    android:layout_marginTop="@dimen/normal_space"
                     android:layout_weight="0.7"
                     android:text="@string/unknown"
                     android:textSize="@dimen/normal_text" />
             </androidx.appcompat.widget.LinearLayoutCompat>
 
             <!-- taxStatus-->
+            <com.google.android.material.divider.MaterialDivider
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="@dimen/small_space" />
+
             <androidx.appcompat.widget.LinearLayoutCompat
                 android:id="@+id/llctaxStatus"
                 android:layout_width="match_parent"
@@ -336,7 +381,6 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="@dimen/normal_space"
-                    android:layout_marginTop="@dimen/normal_space"
                     android:layout_weight="0.4"
                     android:text="@string/tax_status"
                     android:textSize="@dimen/normal_text"
@@ -347,14 +391,19 @@
                     android:id="@+id/tvTaxStatus"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
                     android:layout_marginHorizontal="@dimen/small_space"
-                    android:layout_marginTop="@dimen/normal_space"
                     android:layout_weight="0.7"
                     android:text="@string/unknown"
                     android:textSize="@dimen/normal_text" />
             </androidx.appcompat.widget.LinearLayoutCompat>
 
             <!-- dateOfLastV5CIssued-->
+            <com.google.android.material.divider.MaterialDivider
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="@dimen/small_space" />
+
             <androidx.appcompat.widget.LinearLayoutCompat
                 android:id="@+id/llcdateOfLastV5CIssued"
                 android:layout_width="match_parent"
@@ -365,7 +414,6 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="@dimen/normal_space"
-                    android:layout_marginTop="@dimen/normal_space"
                     android:layout_weight="0.4"
                     android:text="@string/date_of_last_v5c_issued"
                     android:textSize="@dimen/normal_text"
@@ -376,14 +424,20 @@
                     android:id="@+id/tvDateOfLastV5CIssued"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
                     android:layout_marginHorizontal="@dimen/small_space"
-                    android:layout_marginTop="@dimen/normal_space"
                     android:layout_weight="0.7"
+
                     android:text="@string/unknown"
                     android:textSize="@dimen/normal_text" />
             </androidx.appcompat.widget.LinearLayoutCompat>
 
             <!-- motExpiryDate-->
+            <com.google.android.material.divider.MaterialDivider
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="@dimen/small_space" />
+
             <androidx.appcompat.widget.LinearLayoutCompat
                 android:id="@+id/llcMotExpiryDate"
                 android:layout_width="match_parent"
@@ -394,7 +448,6 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="@dimen/normal_space"
-                    android:layout_marginTop="@dimen/normal_space"
                     android:layout_weight="0.4"
                     android:text="@string/mot_expiry_date"
                     android:textSize="@dimen/normal_text"
@@ -405,14 +458,19 @@
                     android:id="@+id/tvMotExpiryDate"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
                     android:layout_marginHorizontal="@dimen/small_space"
-                    android:layout_marginTop="@dimen/normal_space"
                     android:layout_weight="0.7"
                     android:text="@string/unknown"
                     android:textSize="@dimen/normal_text" />
             </androidx.appcompat.widget.LinearLayoutCompat>
 
             <!-- wheelplan-->
+            <com.google.android.material.divider.MaterialDivider
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="@dimen/small_space" />
+
             <androidx.appcompat.widget.LinearLayoutCompat
                 android:id="@+id/llcWheelplan"
                 android:layout_width="match_parent"
@@ -423,7 +481,6 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="@dimen/normal_space"
-                    android:layout_marginTop="@dimen/normal_space"
                     android:layout_weight="0.4"
                     android:text="@string/wheel_plan"
                     android:textSize="@dimen/normal_text"
@@ -434,14 +491,19 @@
                     android:id="@+id/tvWheelplan"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
                     android:layout_marginHorizontal="@dimen/small_space"
-                    android:layout_marginTop="@dimen/normal_space"
                     android:layout_weight="0.7"
                     android:text="@string/unknown"
                     android:textSize="@dimen/normal_text" />
             </androidx.appcompat.widget.LinearLayoutCompat>
 
             <!-- monthOfFirstRegistration-->
+            <com.google.android.material.divider.MaterialDivider
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="@dimen/small_space" />
+
             <androidx.appcompat.widget.LinearLayoutCompat
                 android:id="@+id/llcmonthOfFirstRegistration"
                 android:layout_width="match_parent"
@@ -452,7 +514,6 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="@dimen/normal_space"
-                    android:layout_marginTop="@dimen/normal_space"
                     android:layout_weight="0.4"
                     android:text="@string/month_of_first_registration"
                     android:textSize="@dimen/normal_text"
@@ -463,8 +524,8 @@
                     android:id="@+id/tvMonthOfFirstRegistration"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
                     android:layout_marginHorizontal="@dimen/small_space"
-                    android:layout_marginTop="@dimen/normal_space"
                     android:layout_weight="0.7"
                     android:text="@string/unknown"
                     android:textSize="@dimen/normal_text" />

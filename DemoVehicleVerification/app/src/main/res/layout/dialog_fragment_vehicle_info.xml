@@ -27,7 +27,6 @@
                 android:src="@color/colorPrimary"
                 app:layout_constraintTop_toTopOf="parent" />
 
-
             <!-- num-->
             <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/tvRegNumber"
@@ -40,6 +39,11 @@
                 android:textSize="36sp" />
 
             <!-- engineCapacity-->
+            <com.google.android.material.divider.MaterialDivider
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="@dimen/small_space" />
+
             <androidx.appcompat.widget.LinearLayoutCompat
                 android:id="@+id/llcEngineCapacity"
                 android:layout_width="match_parent"
@@ -50,7 +54,6 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="@dimen/normal_space"
-                    android:layout_marginTop="@dimen/normal_space"
                     android:layout_weight="0.4"
                     android:text="@string/engine_capacity"
                     android:textSize="@dimen/normal_text"
@@ -61,14 +64,19 @@
                     android:id="@+id/tvEngineCapacity"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
                     android:layout_marginHorizontal="@dimen/small_space"
-                    android:layout_marginTop="@dimen/normal_space"
                     android:layout_weight="0.7"
                     android:text="@string/unknown"
                     android:textSize="@dimen/normal_text" />
             </androidx.appcompat.widget.LinearLayoutCompat>
 
             <!-- Fuel type-->
+            <com.google.android.material.divider.MaterialDivider
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="@dimen/small_space" />
+
             <androidx.appcompat.widget.LinearLayoutCompat
                 android:id="@+id/llcfuelType"
                 android:layout_width="match_parent"
@@ -79,7 +87,6 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="@dimen/normal_space"
-                    android:layout_marginTop="@dimen/normal_space"
                     android:layout_weight="0.4"
                     android:text="@string/fuel_type"
                     android:textSize="@dimen/normal_text"
@@ -90,14 +97,19 @@
                     android:id="@+id/tvFuelType"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
                     android:layout_marginHorizontal="@dimen/small_space"
-                    android:layout_marginTop="@dimen/normal_space"
                     android:layout_weight="0.7"
                     android:text="@string/unknown"
                     android:textSize="@dimen/normal_text" />
             </androidx.appcompat.widget.LinearLayoutCompat>
 
             <!-- colour-->
+            <com.google.android.material.divider.MaterialDivider
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="@dimen/small_space" />
+
             <androidx.appcompat.widget.LinearLayoutCompat
                 android:id="@+id/llccolour"
                 android:layout_width="match_parent"
@@ -108,7 +120,6 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="@dimen/normal_space"
-                    android:layout_marginTop="@dimen/normal_space"
                     android:layout_weight="0.4"
                     android:text="@string/colour"
                     android:textSize="@dimen/normal_text"
@@ -119,14 +130,19 @@
                     android:id="@+id/tvColour"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
                     android:layout_marginHorizontal="@dimen/small_space"
-                    android:layout_marginTop="@dimen/normal_space"
                     android:layout_weight="0.7"
                     android:text="@string/unknown"
                     android:textSize="@dimen/normal_text" />
             </androidx.appcompat.widget.LinearLayoutCompat>
 
             <!-- monthOfFirstRegistration-->
+            <com.google.android.material.divider.MaterialDivider
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="@dimen/small_space" />
+
             <androidx.appcompat.widget.LinearLayoutCompat
                 android:id="@+id/llcmonthOfFirstRegistration"
                 android:layout_width="match_parent"
@@ -137,7 +153,6 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="@dimen/normal_space"
-                    android:layout_marginTop="@dimen/normal_space"
                     android:layout_weight="0.4"
                     android:text="@string/month_of_first_registration"
                     android:textSize="@dimen/normal_text"
@@ -148,8 +163,8 @@
                     android:id="@+id/tvMonthOfFirstRegistration"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
                     android:layout_marginHorizontal="@dimen/small_space"
-                    android:layout_marginTop="@dimen/normal_space"
                     android:layout_weight="0.7"
                     android:text="@string/unknown"
                     android:textSize="@dimen/normal_text" />
@@ -183,11 +198,11 @@
 
     <androidx.appcompat.widget.LinearLayoutCompat
         android:id="@+id/linearLayoutCompat"
-        android:paddingHorizontal="@dimen/normal_space"
-        android:paddingBottom="@dimen/normal_space"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
+        android:paddingHorizontal="@dimen/normal_space"
+        android:paddingBottom="@dimen/normal_space"
         app:layout_constraintBottom_toBottomOf="parent">
 
         <com.google.android.material.button.MaterialButton

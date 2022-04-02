@@ -65,6 +65,7 @@ class SearchFragment : Fragment(R.layout.fragment_search), ICommitDialogInfo {
                             getString(R.string.no_vehicle_err),
                             Snackbar.LENGTH_LONG
                         ).show()
+                        binding.tiRegNum.error = getString(R.string.no_vehicle_err)
 
                         it.data?.registrationNumber?.let {
                             viewModel.createVehicleInfo(
