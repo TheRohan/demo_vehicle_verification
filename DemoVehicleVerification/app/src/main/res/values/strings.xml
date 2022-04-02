@@ -1,3 +1,55 @@
 <resources>
     <string name="app_name">DemoVehicleVerification</string>
+
+    <string name="hello_text_1">Hello!</string>
+    <string name="hello_text_2">First time here?</string>
+    <string name="hello_text_3">Tab the button below and let\'s start…</string>
+    <string name="next">Next</string>
+    <string name="registrationNumber">Registration number</string>
+    <string name="please_write_down_your_registration_number">Please write down your registration number</string>
+    <string name="get_information">Get information</string>
+    <string name="sort_by">Sort by:</string>
+    <string name="search">Search</string>
+    <string name="co2_emissions">CO2 Emissions</string>
+    <string name="mot_status">MOT status</string>
+    <string name="colour">Colour</string>
+    <string name="fuel_type">Fuel type</string>
+    <string name="type_approval">Type approval</string>
+    <string name="year_of_manufacture">Year of manufacture</string>
+    <string name="tax_due_date">Tax due date</string>
+    <string name="tax_status">Tax status</string>
+    <string name="date_of_last_v5c_issued">Date of last V5C Issued</string>
+    <string name="mot_expiry_date">MOT expiry date</string>
+    <string name="wheel_plan">Wheel plan</string>
+    <string name="month_of_first_registration">Month of first registration</string>
+    <string name="engine_capacity">Engine capacity</string>
+    <string name="unknown">unknown</string>
+    <string name="make">Make</string>
+    <string name="marked_for_export">Marked for export</string>
+    <string name="back">Back</string>
+    <string name="status">Status</string>
+    <string name="verification_date">Verification date</string>
+    <string name="error">Error</string>
+    <string name="ok">OK</string>
+    <string name="network_error">This app require internet connection for stable work, please turn connection on</string>
+    <string name="please_confirm_if_this_is_your_vehicle">Please confirm if this is your vehicle</string>
+    <string name="approve">Approve</string>
+    <string name="disprove">Disprove</string>
+    <string name="reg_num_err">Registration number is incorrect </string>
+    <string name="internet_err">No internet connection </string>
+    <string name="default_err">Something went wrong</string>
+    <string name="no_vehicle_err">Data not found, try another registration number</string>
+    <string name="success">Success</string>
+    <string name="success_dialog_body">Vehicle was successfully approved!</string>
+    <string name="not_found">Not found</string>
+    <string name="approved">Approved</string>
+    <string name="disproved">Disproved</string>
+
+    <string-array name="filter_options">
+        <item>Date</item>
+        <item>Name</item>
+        <item>Approved</item>
+        <item>Disproved</item>
+        <item>Not found</item>
+    </string-array>
 </resources>
