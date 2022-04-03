@@ -1,13 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.fragments.DetailFragment">
 
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?android:colorBackground"
+        android:elevation="60dp"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <!-- num-->
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tvRegNumber"
+            style="@style/Theme.DemoDistanceCalculator.TitleText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/normal_space"
+            android:layout_marginVertical="@dimen/normal_space"
+            android:text="AA11AAA"
+            android:textSize="36sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.divider.MaterialDivider
+            android:id="@+id/materialDivider"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="0dp"
+        android:fadeScrollbars="false"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout2">
 
         <androidx.appcompat.widget.LinearLayoutCompat
             android:layout_width="match_parent"
@@ -19,26 +52,16 @@
                 android:layout_width="match_parent"
                 android:layout_height="300dp"
                 android:fitsSystemWindows="true"
-                android:scaleType="centerCrop"
+                android:scaleType="fitCenter"
                 android:src="@color/colorPrimary" />
-
-            <!-- num-->
-            <com.google.android.material.textview.MaterialTextView
-                android:id="@+id/tvRegNumber"
-                style="@style/Theme.DemoDistanceCalculator.TitleText"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="@dimen/normal_space"
-                android:layout_marginTop="@dimen/normal_space"
-                android:text="AA11AAA"
-                android:textSize="36sp" />
 
 
             <!-- co2Emissions-->
             <com.google.android.material.divider.MaterialDivider
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginVertical="@dimen/small_space" />
+                android:layout_marginVertical="@dimen/small_space"
+                android:alpha="0.3" />
 
             <androidx.appcompat.widget.LinearLayoutCompat
                 android:id="@+id/llcCo2Emissions"
@@ -72,7 +95,8 @@
             <com.google.android.material.divider.MaterialDivider
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginVertical="@dimen/small_space" />
+                android:layout_marginVertical="@dimen/small_space"
+                android:alpha="0.3" />
 
             <androidx.appcompat.widget.LinearLayoutCompat
                 android:id="@+id/llcEngineCapacity"
@@ -105,7 +129,8 @@
             <com.google.android.material.divider.MaterialDivider
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginVertical="@dimen/small_space" />
+                android:layout_marginVertical="@dimen/small_space"
+                android:alpha="0.3" />
 
             <androidx.appcompat.widget.LinearLayoutCompat
                 android:id="@+id/llcmarkedForExport"
@@ -138,7 +163,8 @@
             <com.google.android.material.divider.MaterialDivider
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginVertical="@dimen/small_space" />
+                android:layout_marginVertical="@dimen/small_space"
+                android:alpha="0.3" />
 
             <androidx.appcompat.widget.LinearLayoutCompat
                 android:id="@+id/llcfuelType"
@@ -171,7 +197,8 @@
             <com.google.android.material.divider.MaterialDivider
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginVertical="@dimen/small_space" />
+                android:layout_marginVertical="@dimen/small_space"
+                android:alpha="0.3" />
 
             <androidx.appcompat.widget.LinearLayoutCompat
                 android:id="@+id/motStatus"
@@ -204,7 +231,8 @@
             <com.google.android.material.divider.MaterialDivider
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginVertical="@dimen/small_space" />
+                android:layout_marginVertical="@dimen/small_space"
+                android:alpha="0.3" />
 
             <androidx.appcompat.widget.LinearLayoutCompat
                 android:id="@+id/llccolour"
@@ -237,7 +265,8 @@
             <com.google.android.material.divider.MaterialDivider
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginVertical="@dimen/small_space" />
+                android:layout_marginVertical="@dimen/small_space"
+                android:alpha="0.3" />
 
             <androidx.appcompat.widget.LinearLayoutCompat
                 android:id="@+id/llcmake"
@@ -270,7 +299,8 @@
             <com.google.android.material.divider.MaterialDivider
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginVertical="@dimen/small_space" />
+                android:layout_marginVertical="@dimen/small_space"
+                android:alpha="0.3" />
 
             <androidx.appcompat.widget.LinearLayoutCompat
                 android:id="@+id/llctypeApproval"
@@ -303,7 +333,8 @@
             <com.google.android.material.divider.MaterialDivider
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginVertical="@dimen/small_space" />
+                android:layout_marginVertical="@dimen/small_space"
+                android:alpha="0.3" />
 
             <androidx.appcompat.widget.LinearLayoutCompat
                 android:id="@+id/llcyearOfManufacture"
@@ -336,7 +367,8 @@
             <com.google.android.material.divider.MaterialDivider
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginVertical="@dimen/small_space" />
+                android:layout_marginVertical="@dimen/small_space"
+                android:alpha="0.3" />
 
             <androidx.appcompat.widget.LinearLayoutCompat
                 android:id="@+id/llcTaxDueDate"
@@ -369,7 +401,8 @@
             <com.google.android.material.divider.MaterialDivider
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginVertical="@dimen/small_space" />
+                android:layout_marginVertical="@dimen/small_space"
+                android:alpha="0.3" />
 
             <androidx.appcompat.widget.LinearLayoutCompat
                 android:id="@+id/llctaxStatus"
@@ -402,7 +435,8 @@
             <com.google.android.material.divider.MaterialDivider
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginVertical="@dimen/small_space" />
+                android:layout_marginVertical="@dimen/small_space"
+                android:alpha="0.3" />
 
             <androidx.appcompat.widget.LinearLayoutCompat
                 android:id="@+id/llcdateOfLastV5CIssued"
@@ -436,7 +470,8 @@
             <com.google.android.material.divider.MaterialDivider
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginVertical="@dimen/small_space" />
+                android:layout_marginVertical="@dimen/small_space"
+                android:alpha="0.3" />
 
             <androidx.appcompat.widget.LinearLayoutCompat
                 android:id="@+id/llcMotExpiryDate"
@@ -469,7 +504,8 @@
             <com.google.android.material.divider.MaterialDivider
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginVertical="@dimen/small_space" />
+                android:layout_marginVertical="@dimen/small_space"
+                android:alpha="0.3" />
 
             <androidx.appcompat.widget.LinearLayoutCompat
                 android:id="@+id/llcWheelplan"
@@ -502,7 +538,8 @@
             <com.google.android.material.divider.MaterialDivider
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginVertical="@dimen/small_space" />
+                android:layout_marginVertical="@dimen/small_space"
+                android:alpha="0.3" />
 
             <androidx.appcompat.widget.LinearLayoutCompat
                 android:id="@+id/llcmonthOfFirstRegistration"

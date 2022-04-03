@@ -118,7 +118,6 @@ class DetailFragment : Fragment(R.layout.fragment_detail) {
         tv.text = text.ifBlank {
             getText(R.string.unknown)
         }
-
     }
 
     private fun navigateToHistoryFragment() {

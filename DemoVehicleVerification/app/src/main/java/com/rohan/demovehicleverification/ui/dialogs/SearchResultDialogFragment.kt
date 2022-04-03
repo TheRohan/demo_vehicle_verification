@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
 import androidx.fragment.app.DialogFragment
 import com.bumptech.glide.Glide
 import com.rohan.demovehicleverification.R
@@ -56,15 +57,35 @@ class SearchResultDialogFragment : androidx.fragment.app.DialogFragment() {
         super.onViewCreated(view, savedInstanceState)
 
 
-        val unknownText = getText(R.string.unknown)
+        vehicle?.let {
+            Glide.with(binding.root).load(image).into(binding.iImg)
 
-        binding.tvRegNumber.text = vehicle?.registrationNumber ?: unknownText
-        binding.tvEngineCapacity.text = vehicle?.engineCapacity?.toString() ?: unknownText
-        binding.tvColour.text = vehicle?.colour ?: unknownText
-        binding.tvFuelType.text = vehicle?.fuelType ?: unknownText
-        binding.tvMonthOfFirstRegistration.text = vehicle?.monthOfFirstRegistration ?: unknownText
+            fillFieldWithData(binding.tvRegNumber, it.registrationNumber)
+            fillFieldWithData(binding.tvCo2Emissions, it.co2Emissions.toString())
+            fillFieldWithData(binding.tvEngineCapacity, it.engineCapacity.toString())
+            fillFieldWithData(binding.tvMarkedForExport, it.markedForExport.toString())
+            fillFieldWithData(binding.tvFuelType, it.fuelType)
+            fillFieldWithData(binding.tvMotStatus, it.motStatus)
+            fillFieldWithData(binding.tvColour, it.colour)
+            fillFieldWithData(binding.tvMake, it.make)
+            fillFieldWithData(binding.tvTypeApproval, it.typeApproval)
+            fillFieldWithData(
+                binding.tvYearOfManufacture,
+                it.yearOfManufacture.toString()
+            )
+            fillFieldWithData(binding.tvTaxDueDate, it.taxDueDate)
+            fillFieldWithData(binding.tvTaxStatus, it.taxStatus)
+            fillFieldWithData(binding.tvDateOfLastV5CIssued, it.dateOfLastV5CIssued)
+            fillFieldWithData(binding.tvMotExpiryDate, it.motExpiryDate)
+            fillFieldWithData(binding.tvWheelplan, it.wheelplan)
+            fillFieldWithData(
+                binding.tvMonthOfFirstRegistration,
+                it.monthOfFirstRegistration
+            )
+        }
 
-        Glide.with(binding.root).load(image).into(binding.iImg)
+
+
 
 
 
@@ -121,5 +142,13 @@ class SearchResultDialogFragment : androidx.fragment.app.DialogFragment() {
 
             iCommitDialogInfo?.dialogClosedWithStatus(approved, vi)
         }
+    }
+
+
+    private fun fillFieldWithData(tv: TextView, text: String?) {
+        val unknown = getText(R.string.unknown)
+        tv.text = text?.ifBlank {
+            unknown
+        } ?: unknown
     }
 }

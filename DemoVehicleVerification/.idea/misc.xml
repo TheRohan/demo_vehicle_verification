@@ -4,7 +4,7 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.19610507246376813" />
-        <entry key="app/src/main/res/layout/dialog_fragment_vehicle_info.xml" value="0.22133636474609375" />
+        <entry key="app/src/main/res/layout/dialog_fragment_vehicle_info.xml" value="0.1893112182617188" />
         <entry key="app/src/main/res/layout/fragment_detail.xml" value="0.19726715087890628" />
         <entry key="app/src/main/res/layout/fragment_hello.xml" value="0.2371643066406251" />
         <entry key="app/src/main/res/layout/fragment_history.xml" value="0.20973114013671873" />

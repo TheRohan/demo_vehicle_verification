@@ -7,11 +7,43 @@
     android:layout_margin="@dimen/normal_space"
     tools:context=".ui.dialogs.SearchResultDialogFragment">
 
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?android:colorBackground"
+        android:elevation="60dp"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tvInfo"
+            style="@style/Theme.DemoDistanceCalculator.TitleText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/normal_space"
+            android:layout_marginVertical="@dimen/normal_space"
+            android:gravity="center"
+            android:text="@string/please_confirm_if_this_is_your_vehicle"
+            android:textSize="@dimen/large_text"
+            app:layout_constraintBottom_toTopOf="@+id/materialDivider"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:layout_editor_absoluteX="32dp" />
+
+        <com.google.android.material.divider.MaterialDivider
+            android:id="@+id/materialDivider"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        app:layout_constraintBottom_toTopOf="@+id/materialDivider"
-        app:layout_constraintTop_toTopOf="parent">
+        android:background="?android:colorBackground"
+        android:fadeScrollbars="false"
+        app:layout_constraintBottom_toTopOf="@+id/constraintLayout3"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout2">
 
         <androidx.appcompat.widget.LinearLayoutCompat
             android:layout_width="match_parent"
@@ -23,8 +55,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="300dp"
                 android:fitsSystemWindows="true"
-                android:scaleType="centerCrop"
-                android:src="@color/colorPrimary"
+                android:scaleType="fitCenter"
+                android:src="@color/white"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <!-- num-->
@@ -38,11 +70,48 @@
                 android:text="AA11AAA"
                 android:textSize="36sp" />
 
+
+            <!-- co2Emissions-->
+            <com.google.android.material.divider.MaterialDivider
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="@dimen/small_space"
+                android:alpha="0.3" />
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/llcCo2Emissions"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/normal_space"
+                    android:layout_weight="0.4"
+                    android:text="@string/co2_emissions"
+                    android:textSize="@dimen/normal_text"
+                    android:textStyle="bold" />
+
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tvCo2Emissions"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginHorizontal="@dimen/small_space"
+                    android:layout_weight="0.7"
+                    android:text="@string/unknown"
+                    android:textSize="@dimen/normal_text" />
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+
             <!-- engineCapacity-->
             <com.google.android.material.divider.MaterialDivider
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginVertical="@dimen/small_space" />
+                android:layout_marginVertical="@dimen/small_space"
+                android:alpha="0.3" />
 
             <androidx.appcompat.widget.LinearLayoutCompat
                 android:id="@+id/llcEngineCapacity"
@@ -71,11 +140,46 @@
                     android:textSize="@dimen/normal_text" />
             </androidx.appcompat.widget.LinearLayoutCompat>
 
+            <!-- markedForExport-->
+            <com.google.android.material.divider.MaterialDivider
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="@dimen/small_space"
+                android:alpha="0.3" />
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/llcmarkedForExport"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/normal_space"
+                    android:layout_weight="0.4"
+                    android:text="@string/marked_for_export"
+                    android:textSize="@dimen/normal_text"
+                    android:textStyle="bold" />
+
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tvMarkedForExport"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginHorizontal="@dimen/small_space"
+                    android:layout_weight="0.7"
+                    android:text="@string/unknown"
+                    android:textSize="@dimen/normal_text" />
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
             <!-- Fuel type-->
             <com.google.android.material.divider.MaterialDivider
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginVertical="@dimen/small_space" />
+                android:layout_marginVertical="@dimen/small_space"
+                android:alpha="0.3" />
 
             <androidx.appcompat.widget.LinearLayoutCompat
                 android:id="@+id/llcfuelType"
@@ -104,11 +208,46 @@
                     android:textSize="@dimen/normal_text" />
             </androidx.appcompat.widget.LinearLayoutCompat>
 
+            <!-- motStatus-->
+            <com.google.android.material.divider.MaterialDivider
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="@dimen/small_space"
+                android:alpha="0.3" />
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/motStatus"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/normal_space"
+                    android:layout_weight="0.4"
+                    android:text="@string/mot_status"
+                    android:textSize="@dimen/normal_text"
+                    android:textStyle="bold" />
+
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tvMotStatus"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginHorizontal="@dimen/small_space"
+                    android:layout_weight="0.7"
+                    android:text="@string/unknown"
+                    android:textSize="@dimen/normal_text" />
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
             <!-- colour-->
             <com.google.android.material.divider.MaterialDivider
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginVertical="@dimen/small_space" />
+                android:layout_marginVertical="@dimen/small_space"
+                android:alpha="0.3" />
 
             <androidx.appcompat.widget.LinearLayoutCompat
                 android:id="@+id/llccolour"
@@ -137,11 +276,285 @@
                     android:textSize="@dimen/normal_text" />
             </androidx.appcompat.widget.LinearLayoutCompat>
 
+            <!-- make-->
+            <com.google.android.material.divider.MaterialDivider
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="@dimen/small_space"
+                android:alpha="0.3" />
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/llcmake"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/normal_space"
+                    android:layout_weight="0.4"
+                    android:text="@string/make"
+                    android:textSize="@dimen/normal_text"
+                    android:textStyle="bold" />
+
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tvMake"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginHorizontal="@dimen/small_space"
+                    android:layout_weight="0.7"
+                    android:text="@string/unknown"
+                    android:textSize="@dimen/normal_text" />
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <!-- typeApproval-->
+            <com.google.android.material.divider.MaterialDivider
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="@dimen/small_space"
+                android:alpha="0.3" />
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/llctypeApproval"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/normal_space"
+                    android:layout_weight="0.4"
+                    android:text="@string/type_approval"
+                    android:textSize="@dimen/normal_text"
+                    android:textStyle="bold" />
+
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tvTypeApproval"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginHorizontal="@dimen/small_space"
+                    android:layout_weight="0.7"
+                    android:text="@string/unknown"
+                    android:textSize="@dimen/normal_text" />
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <!-- yearOfManufacture-->
+            <com.google.android.material.divider.MaterialDivider
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="@dimen/small_space"
+                android:alpha="0.3" />
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/llcyearOfManufacture"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/normal_space"
+                    android:layout_weight="0.4"
+                    android:text="@string/year_of_manufacture"
+                    android:textSize="@dimen/normal_text"
+                    android:textStyle="bold" />
+
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tvYearOfManufacture"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginHorizontal="@dimen/small_space"
+                    android:layout_weight="0.7"
+                    android:text="@string/unknown"
+                    android:textSize="@dimen/normal_text" />
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <!-- taxDueDate-->
+            <com.google.android.material.divider.MaterialDivider
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="@dimen/small_space"
+                android:alpha="0.3" />
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/llcTaxDueDate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/normal_space"
+                    android:layout_weight="0.4"
+                    android:text="@string/tax_due_date"
+                    android:textSize="@dimen/normal_text"
+                    android:textStyle="bold" />
+
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tvTaxDueDate"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginHorizontal="@dimen/small_space"
+                    android:layout_weight="0.7"
+                    android:text="@string/unknown"
+                    android:textSize="@dimen/normal_text" />
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <!-- taxStatus-->
+            <com.google.android.material.divider.MaterialDivider
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="@dimen/small_space"
+                android:alpha="0.3" />
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/llctaxStatus"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/normal_space"
+                    android:layout_weight="0.4"
+                    android:text="@string/tax_status"
+                    android:textSize="@dimen/normal_text"
+                    android:textStyle="bold" />
+
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tvTaxStatus"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginHorizontal="@dimen/small_space"
+                    android:layout_weight="0.7"
+                    android:text="@string/unknown"
+                    android:textSize="@dimen/normal_text" />
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <!-- dateOfLastV5CIssued-->
+            <com.google.android.material.divider.MaterialDivider
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="@dimen/small_space"
+                android:alpha="0.3" />
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/llcdateOfLastV5CIssued"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/normal_space"
+                    android:layout_weight="0.4"
+                    android:text="@string/date_of_last_v5c_issued"
+                    android:textSize="@dimen/normal_text"
+                    android:textStyle="bold" />
+
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tvDateOfLastV5CIssued"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginHorizontal="@dimen/small_space"
+                    android:layout_weight="0.7"
+
+                    android:text="@string/unknown"
+                    android:textSize="@dimen/normal_text" />
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <!-- motExpiryDate-->
+            <com.google.android.material.divider.MaterialDivider
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="@dimen/small_space"
+                android:alpha="0.3" />
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/llcMotExpiryDate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/normal_space"
+                    android:layout_weight="0.4"
+                    android:text="@string/mot_expiry_date"
+                    android:textSize="@dimen/normal_text"
+                    android:textStyle="bold" />
+
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tvMotExpiryDate"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginHorizontal="@dimen/small_space"
+                    android:layout_weight="0.7"
+                    android:text="@string/unknown"
+                    android:textSize="@dimen/normal_text" />
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <!-- wheelplan-->
+            <com.google.android.material.divider.MaterialDivider
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="@dimen/small_space"
+                android:alpha="0.3" />
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/llcWheelplan"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/normal_space"
+                    android:layout_weight="0.4"
+                    android:text="@string/wheel_plan"
+                    android:textSize="@dimen/normal_text"
+                    android:textStyle="bold" />
+
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tvWheelplan"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginHorizontal="@dimen/small_space"
+                    android:layout_weight="0.7"
+                    android:text="@string/unknown"
+                    android:textSize="@dimen/normal_text" />
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
             <!-- monthOfFirstRegistration-->
             <com.google.android.material.divider.MaterialDivider
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginVertical="@dimen/small_space" />
+                android:layout_marginVertical="@dimen/small_space"
+                android:alpha="0.3" />
 
             <androidx.appcompat.widget.LinearLayoutCompat
                 android:id="@+id/llcmonthOfFirstRegistration"
@@ -170,67 +583,64 @@
                     android:textSize="@dimen/normal_text" />
             </androidx.appcompat.widget.LinearLayoutCompat>
 
+
         </androidx.appcompat.widget.LinearLayoutCompat>
 
     </ScrollView>
 
-
-    <com.google.android.material.divider.MaterialDivider
-        android:id="@+id/materialDivider"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="@dimen/normal_space"
-        app:layout_constraintBottom_toTopOf="@+id/tvInfo" />
-
-
-    <com.google.android.material.textview.MaterialTextView
-        android:id="@+id/tvInfo"
-        style="@style/Theme.DemoDistanceCalculator.TitleText"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="@dimen/normal_space"
-        android:layout_marginBottom="@dimen/normal_space"
-        android:gravity="center"
-        android:text="@string/please_confirm_if_this_is_your_vehicle"
-        android:textSize="@dimen/large_text"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayoutCompat"
-        tools:layout_editor_absoluteX="32dp" />
-
-    <androidx.appcompat.widget.LinearLayoutCompat
-        android:id="@+id/linearLayoutCompat"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:paddingHorizontal="@dimen/normal_space"
-        android:paddingBottom="@dimen/normal_space"
+        android:background="?android:colorBackground"
+        android:elevation="60dp"
         app:layout_constraintBottom_toBottomOf="parent">
 
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/bNo"
-            style="@style/Widget.Material3.Button"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginEnd="@dimen/normal_space"
-            android:layout_weight="1"
-            android:paddingHorizontal="30dp"
-            android:paddingVertical="10dp"
-            android:text="@string/disprove"
-            android:textAllCaps="false"
-            android:textSize="@dimen/normal_text" />
 
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/bYes"
-            style="@style/Widget.Material3.Button"
-            android:layout_width="0dp"
+        <com.google.android.material.divider.MaterialDivider
+            android:id="@+id/materialDivider3"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_weight="1"
-            android:paddingHorizontal="30dp"
-            android:paddingVertical="10dp"
-            android:text="@string/approve"
-            android:textAllCaps="false"
-            android:textSize="@dimen/normal_text" />
-    </androidx.appcompat.widget.LinearLayoutCompat>
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/linearLayoutCompat"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="@dimen/normal_space"
+            android:orientation="horizontal"
+            android:paddingHorizontal="@dimen/normal_space"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/bNo"
+                style="@style/Widget.Material3.Button"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginEnd="@dimen/normal_space"
+                android:layout_weight="1"
+                android:paddingHorizontal="30dp"
+                android:paddingVertical="10dp"
+                android:text="@string/disprove"
+                android:textAllCaps="false"
+                android:textSize="@dimen/normal_text" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/bYes"
+                style="@style/Widget.Material3.Button"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:paddingHorizontal="30dp"
+                android:paddingVertical="10dp"
+                android:text="@string/approve"
+                android:textAllCaps="false"
+                android:textSize="@dimen/normal_text" />
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
